@@ -61,15 +61,15 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 * Selanjutnya, karena SURABAYA ditunjuk menjadi DHCP relay, maka kita perlu menginstall DHCP relay di situ. Pertama, ketikkan `apt-get update` kemudian ketikkan `apt-get install isc-dhcp-relay`. Maka akan muncul beberapa tampilan.
 * Ketikkan IP TUBAN
 
-![relay](./images/6.png)
+![relay](./images/6.jpg)
 
 * Ketikkan eth1 eth2 eth3
 
-![relay](./images/7.png)
+![relay](./images/7.jpg)
 
 *Biarkan kosong dan langsung tekan enter
 
-![relay](./images/8.png)
+![relay](./images/8.jpg)
 
 * Ketika instalasi selesai, restart dengan menggunakan perintah `service networking restart`
 * Sekarang kita pindah ke DHCP server yaitu TUBAN
