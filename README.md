@@ -13,16 +13,24 @@ Penguji:
 
 ## SOAL NO 1-6
 
-Anri adalah seorang mahasiswa tingkat akhir yang sedang mengerjakan TA mengenai DHCP dan Proxy. Bu Meguri sebagai dosen pembimbing Anri memberikan tugas pertamanya, (1) yaitu untuk membuat topologi jaringan demi kelancaran TA-nya dengan kriteria sebagai berikut:
+Anri adalah seorang mahasiswa tingkat akhir yang sedang mengerjakan TA mengenai DHCP dan Proxy. Bu Meguri sebagai dosen pembimbing Anri memberikan tugas pertamanya, **(1)** yaitu untuk **membuat topologi jaringan** demi kelancaran TA-nya dengan kriteria sebagai berikut:
 
 ![tolopogi](./images/topologi.png)
 
-Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membuat topologi tersebut dengan mudah. Bu Meguri memerintahkan Anri untuk menjadikan SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. 
-Bu Meguri berpesan pada Anri untuk menyusun topologi secara hati-hati dan memperhatikan gambar topologi yang diberikan Bu Meguri. 
-Karena TUBAN jauh dari client, maka perlu adanya perantara agar bisa saling terhubung. (2) SURABAYA ditunjuk sebagai perantara (DHCP Relay) antara DHCP Server dan client.
+Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membuat topologi tersebut dengan mudah. Bu Meguri memerintahkan Anri untuk menjadikan **SURABAYA** sebagai router, **MALANG** sebagai DNS Server, **TUBAN** sebagai DHCP server, serta **MOJOKERTO** sebagai Proxy server, dan UML lainnya sebagai client. 
+Bu Meguri berpesan pada Anri untuk **menyusun topologi secara hati-hati** dan **memperhatikan gambar topologi** yang diberikan Bu Meguri. 
+Karena **TUBAN** jauh dari client, maka perlu adanya perantara agar bisa saling terhubung. **(2) SURABAYA** ditunjuk sebagai perantara **(DHCP Relay)** antara DHCP Server dan client.
 Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
-1. Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis.
-2. (3) Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
-3. (4) Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
-4. (5) Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
-5. (6) Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan (6) client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
+1. Seluruh client **TIDAK DIPERBOLEHKAN** menggunakan konfigurasi IP Statis.
+2. **(3)** Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
+3. **(4)** Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
+4. **(5)** Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
+5. **(6)** Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan **(6)** client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
+
+## JAWABAN NO 1-6
+
+* Pertama, kita buat topologi sesuai dengan gambar yang telah diberikan.
+
+![file_tolopogi](./images/file_topologi.png)
+
+* Selanjutnya jalankan topologi dengan menggunakan perintah `bash topologi.sh`. Tunggu hingga topologi terbuka
