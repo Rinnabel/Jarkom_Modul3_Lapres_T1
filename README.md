@@ -67,7 +67,7 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 
 ![relay](./images/7.jpg)
 
-*Biarkan kosong dan langsung tekan enter
+* Biarkan kosong dan langsung tekan enter
 
 ![relay](./images/8.jpg)
 
