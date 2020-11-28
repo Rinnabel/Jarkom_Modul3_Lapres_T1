@@ -41,5 +41,7 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 * Kemudian setting IP pada masing-masing UML router dan server saja dengan mengetikkan `nano /etc/network/interfaces`. Untuk client kita setting belakangan setelah DHCP selesai diatur.
 
 **SURABAYA (Sebagai Router)**
+
 ![SURABAYA](./images/2.png)
+
 **MALANG (Sebagai Server)**
