@@ -34,3 +34,12 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 ![file_tolopogi](./images/file_topologi.png)
 
 * Selanjutnya jalankan topologi dengan menggunakan perintah `bash topologi.sh`. Tunggu hingga topologi terbuka
+* Buka router SURABAYA dan ketikkan    `nano /etc/sysctl.conf`. Hilangkan tanda # pada bagian `net.ipv4.ip_forward=1`. Selanjutnya ketikkan `sysctl -p` untuk mengaktifkan perubahan
+
+![hilangkan_pagar](./images/1.png)
+
+* Kemudian setting IP pada masing-masing UML router dan server saja dengan mengetikkan `nano /etc/network/interfaces`. Untuk client kita setting belakangan setelah DHCP selesai diatur.
+
+**SURABAYA (Sebagai Router)**
+![SURABAYA](./images/2.png)
+**MALANG (Sebagai Server)**
