@@ -21,8 +21,8 @@ Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membu
 Bu Meguri berpesan pada Anri untuk menyusun topologi secara hati-hati dan memperhatikan gambar topologi yang diberikan Bu Meguri. 
 Karena TUBAN jauh dari client, maka perlu adanya perantara agar bisa saling terhubung. (2) SURABAYA ditunjuk sebagai perantara (DHCP Relay) antara DHCP Server dan client.
 Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
-Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis.
-(3) Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
-(4) Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
-(5) Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
-(6) Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan (6) client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
+1. Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis.
+2. (3) Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
+3. (4) Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
+4. (5) Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
+5. (6) Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan (6) client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
