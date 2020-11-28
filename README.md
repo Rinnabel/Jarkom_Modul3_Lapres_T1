@@ -45,3 +45,31 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 ![SURABAYA](./images/2.png)
 
 **MALANG (Sebagai Server)**
+
+![MALANG](./images/3.png)
+
+**MOJOKERTO (Sebagai Server)**
+
+![MOJOKERTO](./images/4.png)
+
+**TUBAN (Sebagai Server)**
+
+![TUBAN](./images/5.png)
+
+* Restart network dengan mengetikkan `service networking restart` di setiap UML.
+* Ketikkan **`iptables –t nat –A POSTROUTING –o eth0 –j MASQUERADE –s 192.168.0.0/16`** pada router SURABAYA, agar bisa mengakses jaringan ke luar.
+* Selanjutnya, karena SURABAYA ditunjuk menjadi DHCP relay, maka kita perlu menginstall DHCP relay di situ. Pertama, ketikkan `apt-get update` kemudian ketikkan `apt-get install isc-dhcp-relay`. Maka akan muncul beberapa tampilan.
+* Ketikkan IP TUBAN
+
+![relay](./images/6.png)
+
+* Ketikkan eth1 eth2 eth3
+
+![relay](./images/7.png)
+
+*Biarkan kosong dan langsung tekan enter
+
+![relay](./images/8.png)
+
+* Ketika instalasi selesai, restart dengan menggunakan perintah `service networking restart`
+* Sekarang kita pindah ke DHCP server yaitu TUBAN
