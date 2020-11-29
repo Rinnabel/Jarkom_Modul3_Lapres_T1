@@ -31,12 +31,12 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 
 * Pertama, kita buat topologi sesuai dengan gambar yang telah diberikan.
 
-![file_tolopogi](./images/file_topologi.png)
+    ![file_tolopogi](./images/file_topologi.png)
 
 * Selanjutnya jalankan topologi dengan menggunakan perintah `bash topologi.sh`. Tunggu hingga topologi terbuka
 * Buka router SURABAYA dan ketikkan    `nano /etc/sysctl.conf`. Hilangkan tanda # pada bagian `net.ipv4.ip_forward=1`. Selanjutnya ketikkan `sysctl -p` untuk mengaktifkan perubahan
 
-![hilangkan_pagar](./images/1.png)
+    ![hilangkan_pagar](./images/1.png)
 
 * Kemudian setting IP pada masing-masing UML router dan server saja dengan mengetikkan `nano /etc/network/interfaces`. Untuk client kita setting belakangan setelah DHCP selesai diatur.
 
@@ -46,15 +46,15 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 
 **MALANG (Sebagai Server)**
 
-    ![MALANG](./images/3.png)
+![MALANG](./images/3.png)
 
 **MOJOKERTO (Sebagai Server)**
 
-    ![MOJOKERTO](./images/4.png)
+![MOJOKERTO](./images/4.png)
 
 **TUBAN (Sebagai Server)**
 
-    ![TUBAN](./images/5.png)
+![TUBAN](./images/5.png)
 
 * Restart network dengan mengetikkan `service networking restart` di setiap UML.
 * Ketikkan **`iptables –t nat –A POSTROUTING –o eth0 –j MASQUERADE –s 192.168.0.0/16`** pada router SURABAYA, agar bisa mengakses jaringan ke luar.
@@ -140,8 +140,25 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, **(1
     ```
     htpasswd -c /etc/squid/passwd userta_t01
     ```
-    Ketikkan password yang diinginkan. Jika sudah maka akan muncul notifikasi:
+    Ketikkan password yang diinginkan yaitu __inipassw0rdta_t01__. Jika sudah maka akan muncul notifikasi:
 
     ![USER](./images/12.png)
 
-* Buat konfigurasi baru dengan mengetikkan `nano /etc/squid/squid.conf`
+* Buat konfigurasi baru dengan mengetikkan `nano /etc/squid/squid.conf`. Kemudian ketikkan script seperti gambar di bawah
+
+     ![konfig_user](./images/13.png)
+
+* Restart squid dengan menggunakan perintah `service squid restart`
+* Ubah pengaturan proxy browser. Gunakan __IP MOJOKERTO sebagai host__, dan isikan port __8080__.
+    
+    ![proxy](./images/14.png)
+
+* Kemudian cobalah untuk mengakses web elearning.if.its.ac.id (usahakan menggunakan mode incognito/private), jika muncul pop-up untuk login maka berhasil.
+
+    ![auth](./images/15.png)
+
+## NO 8 dan 9
+* Pada kedua soal ini, permasalahannya adalah sama yaitu pembatasan waktu. Ketentuannya adalah hari __Selasa-Rabu pukul 13.00-18.00 dan Selasa-Kamis pukul 21.00-09.00 keesokan harinya__. Jika akan kita perhatikan lagi, maka pengaturan waktu ini membutuhkan tiga pengaturan, yaitu:
+    Hari Selasa, Rabu pukul 13.0-18.00
+    Hari Selasa, Rabu, Kamis pukul 21.00-23.59
+    Hari Rabu, Kamis, Jumat pukul 00.00-09.00
