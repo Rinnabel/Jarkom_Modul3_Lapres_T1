@@ -84,13 +84,13 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 
 * Restart service isc-dhcp-server dengan perintah `service isc-dhcp-server restart`
 * Jika terjadi **failed!**, maka stop dulu, kemudian start kembali
-`service isc-dhcp-server stop`
-`service isc-dhcp-server start`
+    `service isc-dhcp-server stop`
+    `service isc-dhcp-server start`
 * Setelah mengonfigurasi server, kita juga perlu mengonfigurasi interface client supaya bisa mendapatkan layanan dari DHCP server. Di dalam topologi ini, clientnya adalah **GRESIK, SIDOARJO, BANYUWANGI, dan MADIUN**.
 * Lakukan konfigurasi interface **GRESIK** dengan menggunakan perintah `nano /etc/network/interfaces`
 * Tambahkan :
-`auto eth0`
-`iface eth0 inet dhcp`
+    `auto eth0`
+    `iface eth0 inet dhcp`
 
 ![GRESIK](./images/11.png)
 
@@ -113,9 +113,16 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, **(1
 
 ![EROR](./images/EROR.png)
 
-**Note** : File error page bisa diunduh dengan cara **wget 10.151.36.202/ERR_ACCESS_DENIED**
-            Tidak perlu di extract, cukup cp -r
+**Note** : File error page bisa diunduh dengan cara **wget 10.151.36.202/ERR_ACCESS_DENIED**. Tidak perlu di extract, cukup cp -r
 
 **(12)** Karena Bu Meguri dan Anri adalah tipe orang pelupa, maka untuk memudahkan mereka, Anri memiliki ide ketika menggunakan proxy cukup dengan mengetikkan domain **janganlupa-ta.yyy.pw** dan memasukkan port **8080**.
 
 **Keterangan** : yyy adalah nama kelompok masing-masing. Contoh: **janganlupa-ta.c01.pw**
+
+## JAWABAN
+## NO 7
+* Lakukan `apt-get update` pada proxy server, yaitu **TUBAN**
+* Install squid dengan perintah `apt-get install squid`. Tunggu sampai selesai
+* Cek status squid dengan mengetikkan `service squid status`. Jika muncul status **ok** maka instalasi telah berhasil.
+* Lakukan backup pada file konfigurasi default yang disediakan Squid.
+`
