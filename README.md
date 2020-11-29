@@ -46,41 +46,41 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 
 **MALANG (Sebagai Server)**
 
-![MALANG](./images/3.png)
+    ![MALANG](./images/3.png)
 
 **MOJOKERTO (Sebagai Server)**
 
-![MOJOKERTO](./images/4.png)
+    ![MOJOKERTO](./images/4.png)
 
 **TUBAN (Sebagai Server)**
 
-![TUBAN](./images/5.png)
+    ![TUBAN](./images/5.png)
 
 * Restart network dengan mengetikkan `service networking restart` di setiap UML.
 * Ketikkan **`iptables –t nat –A POSTROUTING –o eth0 –j MASQUERADE –s 192.168.0.0/16`** pada router SURABAYA, agar bisa mengakses jaringan ke luar.
 * Selanjutnya, karena SURABAYA ditunjuk menjadi DHCP relay, maka kita perlu menginstall DHCP relay di situ. Pertama, ketikkan `apt-get update` kemudian ketikkan `apt-get install isc-dhcp-relay`. Maka akan muncul beberapa tampilan.
 * Ketikkan IP TUBAN
 
-![relay](./images/6.jpg)
+    ![relay](./images/6.jpg)
 
 * Ketikkan eth1 eth2 eth3
 
-![relay](./images/7.jpg)
+    ![relay](./images/7.jpg)
 
 * Biarkan kosong dan langsung tekan enter
 
-![relay](./images/8.jpg)
+    ![relay](./images/8.jpg)
 
 * Ketika instalasi selesai, restart dengan menggunakan perintah `service networking restart`
 * Sekarang kita pindah ke DHCP server yaitu **TUBAN**. Update package lists di server **TUBAN** dengan perintah `apt-get update`. Tunggu hingga selesai kemudian Install isc-dhcp-server dengan mengetikkan `apt-get install isc-dhcp-server`.
 * Selanjutnya adalah menentukan interface mana yang ajan diberi layanan DHCP. Buka file konfigurasi interface dengan perintah `nano /etc/default/isc-dhcp-server`
 * Scroll sampai ke baris paling bawah, lalu edit menjadi `INTERFACES="eth0 eth1 eth2 eth3"`
 
-![interface](./images/9.png)
+    ![interface](./images/9.png)
 
 * Buka file konfigurasi DHCP dengan perintah `nano /etc/dhcp/dhcpd.conf`, lalu tambahkan script seperti pada gambar
 
-![konfig](./images/10.png)
+    ![konfig](./images/10.png)
 
 * Restart service isc-dhcp-server dengan perintah `service isc-dhcp-server restart`
 * Jika terjadi **failed!**, maka stop dulu, kemudian start kembali
@@ -96,7 +96,7 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
     iface eth0 inet dhcp
     ```
 
-![GRESIK](./images/11.png)
+    ![GRESIK](./images/11.png)
 
 * Restart network dengan perintah `service networking restart`
 * Lakukan konfigurasi interface pada client **SIDOARJO, BANYUWANGI, dan MADIUN** dengan cara yang sama seperti **GRESIK**
@@ -140,8 +140,8 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, **(1
     ```
     htpasswd -c /etc/squid/passwd userta_t01
     ```
-Ketikkan password yang diinginkan. Jika sudah maka akan muncul notifikasi:
+    Ketikkan password yang diinginkan. Jika sudah maka akan muncul notifikasi:
 
-![USER](./images/12.png)
+    ![USER](./images/12.png)
 
 * Buat konfigurasi baru dengan mengetikkan `nano /etc/squid/squid.conf`
