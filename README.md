@@ -164,3 +164,77 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, **(1
     Hari Selasa, Rabu, Kamis pukul 21.00-23.59
     Hari Rabu, Kamis, Jumat pukul 00.00-09.00
     ```
+* Buat file baru bernama acl.conf di folder squid dengan menggunakan perintah: `nano /etc/squid/acl.conf`
+* tambahkan baris seperti gambar berikut, lalu simpan perubahan
+
+    ![acl.conf](./images/16.png)
+
+* Buka file squid.conf dengan mengetikkan `nano /etc/squid/squid.conf`. Kemudian tambahkan sedikit konfigurasinya
+
+    ![konfig](./images/17.png)
+
+* Simpan file tersebut. Kemudian restart squid.
+* Cobalah untuk mengakses web http://its.ac.id (usahakan menggunakan mode incognito/private). Akan muncul halaman error jika mengakses diluar waktu yang telah ditentukan.
+
+    ![error](./images/18.png)
+
+## NO 10
+* Buka file squid.conf di MOJOKERTO dengan mengetikkan `nano /etc/squid/squid.conf`. Kemudian tambahkan sedikit konfigurasinya
+
+    ![konfig](./images/19.png)
+
+    badsites adalah variabel, sehingga boleh diganti dengan kata lain.
+
+* Mari kita coba dengan mengakses http://google.com. Jika redirect ke monta maka berhasil
+
+    ![redirect](./images/20.png)
+
+## NO 11
+* pertama, pindah ke direktori yang menyimpan default error page
+    ```
+    cd /usr/share/squid/errors/English/
+    ```
+* Hapus atau rename (terserah) bernama ERR_ACCESS_DENIED
+
+    ![hapus](./images/21.png)
+
+* Lalu jalankan perintah wget 10.151.36.202/ERR_ACCESS_DENIED
+* Dan taraaa file-nya sudah otomatis terganti :D
+
+    ![403](./images/22.png)
+
+## NO 12
+* Sebelum menjalankan UML, ubah konfigurasi pada file VPN. Tambahkan `dhcp-option DNS "IP MALANG TIAP KELOMPOK"` di file .ovpn yang digunakan, hapus profil VPN, dan buat profil VPN baru menggunakan konfigurasi yang ditambahkan
+
+    ![vpn](./images/vpn.png)
+
+* Pergi ke UML __MALANG__. Kemudian ketikkan `apt-get update`
+* Selanjutnya install bind9 dengan perintah `apt-get install bind9 -y`
+* Ketikkan `nano /etc/bind/named.conf.local`, lalu isikan konfigurasi sesuai gambar di bawah
+
+    ![DNS](./images/23.png)
+
+* Buat folder jarkom di dalam /etc/bind
+* Copykan file db.local pada path /etc/bind ke dalam folder jarkom yang baru saja dibuat dan ubah namanya menjadi __janganlupa-ta.t01.pw__
+    ```
+    cp /etc/bind/db.local /etc/bind/jarkom/janganlupa-ta.t01.pw
+    ```
+
+* Kemudian buka file __janganlupa-ta.t01.pw__ dengan perintah `nano /etc/bind/jarkom/janganlupa-ta.t01.pw` dan lakukan konfigurasi sebagai berikut
+
+    ![DNS](./images/24.png)
+
+* Restart bind9 dengan perintah `service bind9 restart`
+* Selanjutnya kita pindah ke MOJOKERTO dan mengedit file resolv.conf dengan mengetikkan perintah `nano /etc/resolv.conf`
+
+    ![DNS](./images/25.png)
+
+* Selanjutnya kita tes apakah sudah bisa terhubung atau belum dengan menggunakan `ping janganlupa-ta.t01.pw`
+
+    ![DNS](./images/26.png)
+    
+* Terakhir, ganti address pada pengaturan proxy browser dengan __`janganlupa-ta.t01.pw`__
+
+    ![DNS](./images/27.png)
+
+* Yeayy pengaturan domain selesai
