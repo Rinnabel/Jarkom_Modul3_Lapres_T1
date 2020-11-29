@@ -159,6 +159,8 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, **(1
 
 ## NO 8 dan 9
 * Pada kedua soal ini, permasalahannya adalah sama yaitu pembatasan waktu. Ketentuannya adalah hari __Selasa-Rabu pukul 13.00-18.00 dan Selasa-Kamis pukul 21.00-09.00 keesokan harinya__. Jika akan kita perhatikan lagi, maka pengaturan waktu ini membutuhkan tiga pengaturan, yaitu:
+    ```
     Hari Selasa, Rabu pukul 13.0-18.00
     Hari Selasa, Rabu, Kamis pukul 21.00-23.59
     Hari Rabu, Kamis, Jumat pukul 00.00-09.00
+    ```
