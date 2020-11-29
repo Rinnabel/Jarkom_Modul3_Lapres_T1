@@ -84,17 +84,17 @@ Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah:
 
 * Restart service isc-dhcp-server dengan perintah `service isc-dhcp-server restart`
 * Jika terjadi **failed!**, maka stop dulu, kemudian start kembali
-```
-service isc-dhcp-server stop
-service isc-dhcp-server start
-```
+    ```
+    service isc-dhcp-server stop
+    service isc-dhcp-server start
+    ```
 * Setelah mengonfigurasi server, kita juga perlu mengonfigurasi interface client supaya bisa mendapatkan layanan dari DHCP server. Di dalam topologi ini, clientnya adalah **GRESIK, SIDOARJO, BANYUWANGI, dan MADIUN**.
 * Lakukan konfigurasi interface **GRESIK** dengan menggunakan perintah `nano /etc/network/interfaces`
 * Tambahkan :
-```
-auto eth0
-iface eth0 inet dhcp
-```
+    ```
+    auto eth0
+    iface eth0 inet dhcp
+    ```
 
 ![GRESIK](./images/11.png)
 
@@ -129,18 +129,19 @@ Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, **(1
 * Install squid dengan perintah `apt-get install squid`. Tunggu sampai selesai
 * Cek status squid dengan mengetikkan `service squid status`. Jika muncul status **ok** maka instalasi telah berhasil.
 * Lakukan backup pada file konfigurasi default yang disediakan Squid.
-```
-mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
-```
+    ```
+    mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
+    ```
 * Lakukan `apt-get update`, kemudian install `apache2-utils`
-```
-apt-get install apache2-utils
-```
+    ```
+    apt-get install apache2-utils
+    ```
 * Buat user dan password baru sesuai dengan ketentuan soal, dengan mengetikkan:
-```
-htpasswd -c /etc/squid/passwd userta_t01
-```
+    ```
+    htpasswd -c /etc/squid/passwd userta_t01
+    ```
 Ketikkan password yang diinginkan. Jika sudah maka akan muncul notifikasi:
+
 ![USER](./images/12.png)
 
 * Buat konfigurasi baru dengan mengetikkan `nano /etc/squid/squid.conf`
